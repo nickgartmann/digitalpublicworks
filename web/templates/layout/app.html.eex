@@ -23,7 +23,7 @@
           <span class="icon-bar"></span>
         </button>
         <a href="/" class="logo navbar-brand">
-          <img src="images/logo.png">
+          <img src="/images/logo.png">
           MKE Digital Public Works
         </a>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

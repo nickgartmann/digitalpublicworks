@@ -1,40 +1,29 @@
 <div class="problem">
   <div class="statement section">
     <label for="statement">Problem</label>
-    <h1>I cannot auto-renew my buss pass</h1>
+    <h1><%= @problem.title %></h1>
   </div>
   <div class="description section">
     <label for="description">Details</label>
-    <p>
-    The MCTS mCard online site requires me to remember to come 
-    back to the site at the end of each month. I always get stuck
-    at the bus stop once every month because I forgot to renew my pass,
-    and it takes 24 hours to process.
-    </p>
-    <p>
-    I would like to have the mCard automatically charge my bank account
-    when I have only a few bus rides left on my account. This could be a 
-    few days left on a specific pass, or if it is a stored value it 
-    could be when I have $5 left.
-    </p>
+    <p><%= @problem.description %></p>
   </div>
   <div class="needs section">
     <label for="needs">Needs</label>
-    <p>
-    This project needs Programmers, MCTS Knowledge, Designers, and Cash funding.
-    </p>
+    <p><%= @problem.needs %></p>
   </div>
   <div class="vote section">
     <label for="vote">Do you have an opinion?</label>
+
     <p>
     Tell the project organizers how you feel about the project. 
     Do you think it is a good idea or a bad idea?
     Is your opinion more complex than that? Fill out the form below 
     to share your opinions, or volunteer to help.
     </p>
+
     <div>
-    <button class="btn btn-primary">I am in favor of this project</button>
-    <button class="btn btn-danger">I am opposed to this project</button>
+      <a href="/problem/<%= @problem.id %>/vote/yes" class="btn btn-primary">I am in favor of this project</a>
+      <a href="/problem/<%= @problem.id %>/vote/no" class="btn btn-danger">I am opposed to this project</a>
     </div>
   </div>
   <div class="pledge section">
