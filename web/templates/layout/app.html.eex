@@ -16,7 +16,10 @@
 
     <header class="header navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <a href="/" class="logo navbar-brand">MKE Digital Public Works</a>
+        <a href="/" class="logo navbar-brand">
+          <img src="images/logo.png">
+          MKE Digital Public Works
+        </a>
         <nav role="navigation">
           <ul class="nav navbar-nav">
             <li><a href="/">View Projects</a></li>

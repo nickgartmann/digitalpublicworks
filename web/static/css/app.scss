@@ -24,7 +24,16 @@ body {
 
   .navbar-brand {
     color: $black;
+
+    img {
+      max-width: 22px;
+      display: inline-block;
+      position: relative;
+      top: -3px;
+      margin-right: 0.5rem;
+    }
   }
+
 
   .navbar-nav {
     > li, li > a {

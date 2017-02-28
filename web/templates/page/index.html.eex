@@ -35,15 +35,13 @@
   </li>
   <li>
     <div class="title">
-      A completely different project
+      Milwaukee city government is behind the technology curve
     </div>
     <p class="description">
-    Lorem ipsum sit dolor Lorem ipsum sit dolor Lorem ipsum sit dolor
-    Lorem ipsum sit dolor Lorem ipsum sit dolor Lorem ipsum sit dolor
-    Lorem ipsum sit dolor Lorem ipsum sit dolor Lorem ipsum sit dolor
-    Lorem ipsum sit dolor
-    Lorem ipsum sit dolor
-    Lorem ipsum sit dolor
+    Most of the online services offered by the City of Milwaukee are 
+    outdated or poor in quality. They often do not offer opportunity
+    to build useful tools on top of existing city services. City government
+    should provide a digital 
     </p>
     <a class="btn btn-primary" href="/problem">I can help</a>
     <a class="btn btn-default" href="/problem">Learn more</a>
