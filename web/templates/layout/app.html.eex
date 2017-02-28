@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+
+    <header class="header navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <a href="/" class="logo navbar-brand">MKE Digital Public Works</a>
+        <nav role="navigation">
+          <ul class="nav navbar-nav">
+            <li><a href="/">View Projects</a></li>
+            <li><a href="/">Submit a Project</a></li>
+          </ul>
+        </nav>
+        <nav role="navigation" class="navbar-right">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Sign up</a></li>
+            <li><a href="/">Sign in</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main" style="padding-top: 50px" class="container">
+      <%= render @view_module, @view_template, assigns %>
+      <div class="footer">
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </main>
+
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

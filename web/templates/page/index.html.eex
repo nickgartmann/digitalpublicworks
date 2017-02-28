@@ -1,0 +1,52 @@
+<div class="tagline">
+  Work together to make Milwaukee better
+</div>
+
+<div class="explainer">
+  <p>
+  The Milwaukee Digital Public Service department connects people
+  with problems to people who can help them solve those problems.
+  Citizens can suggest problems to be fixed, ways they can help, things
+  they are concerned about, money to help solve problems, or expertise
+  to help solve problems.
+  </p>
+  <p>
+
+  </p>
+</div>
+
+<div class="cta">
+  These problems need solving
+</div>
+
+<ul class="event-list">
+  <li>
+    <div class="title">
+      I cannot auto-renew my bus pass
+    </div>
+    <p class="description">
+    The MCTS mCard online site requires me to remember to come 
+    back to the site at the end of each month. I always get stuck
+    at the bus stop once every month because I forgot to renew my pass,
+    and it takes 24 hours to process.
+    </p>
+    <a class="btn btn-primary" href="/problem">I can help</a>
+    <a class="btn btn-default" href="/problem">Learn more</a>
+  </li>
+  <li>
+    <div class="title">
+      A completely different project
+    </div>
+    <p class="description">
+    Lorem ipsum sit dolor Lorem ipsum sit dolor Lorem ipsum sit dolor
+    Lorem ipsum sit dolor Lorem ipsum sit dolor Lorem ipsum sit dolor
+    Lorem ipsum sit dolor Lorem ipsum sit dolor Lorem ipsum sit dolor
+    Lorem ipsum sit dolor
+    Lorem ipsum sit dolor
+    Lorem ipsum sit dolor
+    </p>
+    <a class="btn btn-primary" href="/problem">I can help</a>
+    <a class="btn btn-default" href="/problem">Learn more</a>
+  </li>
+</ul>
+

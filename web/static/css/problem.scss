@@ -1,0 +1,40 @@
+.problem {
+  max-width: 600px;
+  margin: auto;
+  padding-top: 6rem;
+
+  label {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: #999;
+  }
+
+  .section {
+    margin-bottom: 3rem;
+  }
+
+  .statement {
+    
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      padding: 0;
+      margin-top: 1rem;
+    }
+  }
+
+  .description {
+  }
+
+  .pledge {
+    .form-group {
+      margin-bottom: 1rem;
+    }
+  }
+
+  input, textarea {
+    border-radius: 0px;
+
+  }
+}

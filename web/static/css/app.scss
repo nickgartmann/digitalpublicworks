@@ -1,0 +1,57 @@
+$black: #333;
+
+body {
+  font-family: "Merriweather";
+  font-size: 16px;
+}
+
+.btn {
+  border-radius: 0px;
+
+  &.btn-primary {
+    background-color: #00A7E0;
+    border-color: darken(#00A7E0, 10%);
+
+    &:hover {
+      background-color: darken(#00A7E0, 5%)!important;
+    }
+  }
+}
+
+.navbar-default {
+  background-color: #FFF;
+  border-color: $black;
+
+  .navbar-brand {
+    color: $black;
+  }
+
+  .navbar-nav {
+    > li, li > a {
+      color: $black;
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+  ul {
+    list-style: none;
+
+    li { 
+      display: inline-block;
+      margin-right: 1.5rem;
+      &:last-child {
+        margin-right: 0px;
+      }
+
+      a {
+        color: #999;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

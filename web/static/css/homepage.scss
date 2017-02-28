@@ -1,0 +1,44 @@
+.tagline {
+  margin-top: 6rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.explainer {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 3rem;
+}
+
+.cta {
+  margin-top: 6rem;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.event-list {
+  max-width: 600px;
+  margin: auto;
+  list-style: none;
+  padding: 0px;
+  margin-top: 3rem;
+
+  li {
+    border: 1px solid #777;
+    display: block;
+    padding: 2rem;
+    margin-bottom: 1rem;
+
+    .title {
+      font-weight: bold;
+    }
+
+    .description {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
