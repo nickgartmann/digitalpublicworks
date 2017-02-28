@@ -5,7 +5,7 @@ defmodule DPW.PageController do
     render conn, "index.html"
   end
 
-  def problem(conn, _params) do
+  def problem(conn, %{"id" => problem_id}) do
     render conn, "problem.html"
   end
 end

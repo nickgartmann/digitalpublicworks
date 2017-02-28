@@ -16,21 +16,29 @@
 
     <header class="header navbar navbar-default navbar-fixed-top">
       <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a href="/" class="logo navbar-brand">
           <img src="images/logo.png">
           MKE Digital Public Works
         </a>
-        <nav role="navigation">
-          <ul class="nav navbar-nav">
-            <li><a href="/">View Projects</a></li>
-            <li><a href="/submit">Submit a Project</a></li>
-          </ul>
-        </nav>
-        <nav role="navigation" class="navbar-right">
-          <ul class="nav navbar-nav">
-            <li><a href="/login">Sign in</a></li>
-          </ul>
-        </nav>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <nav role="navigation">
+            <ul class="nav navbar-nav">
+              <li><a href="/">View Projects</a></li>
+              <li><a href="/submit">Submit a Project</a></li>
+            </ul>
+          </nav>
+          <nav role="navigation" class="navbar-right">
+            <ul class="nav navbar-nav">
+              <li><a href="/login">Sign in</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
 
