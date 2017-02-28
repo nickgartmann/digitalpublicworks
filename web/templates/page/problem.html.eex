@@ -24,6 +24,19 @@
     This project needs Programmers, MCTS Knowledge, Designers, and Cash funding.
     </p>
   </div>
+  <div class="vote section">
+    <label for="vote">Do you have an opinion?</label>
+    <p>
+    Tell the project organizers how you feel about the project. 
+    Do you think it is a good idea or a bad idea?
+    Is your opinion more complex than that? Fill out the form below 
+    to share your opinions, or volunteer to help.
+    </p>
+    <div>
+    <button class="btn btn-primary">I am in favor of this project</button>
+    <button class="btn btn-danger">I am opposed to this project</button>
+    </div>
+  </div>
   <div class="pledge section">
     <label for="pledge">Can you help?</label>
     <form>
@@ -34,7 +47,7 @@
         <input type="email" class="form-control" placeholder="Your email address">
       </div>
       <div class="form-group">
-        <textarea class="form-control" placeholder="How can you help?"></textarea>
+        <textarea class="form-control" autoresize placeholder="How can you help?"></textarea>
       </div>
       <button class="btn btn-primary">Sign up to help!</button>
     </form>
@@ -45,7 +58,7 @@
   <div class="updates section">
     <label class="updates">Updates</label>
     <p>
-    There are no updates for this project.
+    There have not been any updates on this project yet.
     </p>
   </div>
 </div>

@@ -22,3 +22,9 @@ import "phoenix_html"
 // import socket from "./socket"
 
 
+$(function() {
+  $("textarea[autoresize]").on("keyup", function() {
+    console.log($(this).prop("scrollHeight"), $(this).height())
+    $(this).height($(this).prop("scrollHeight") - 12);
+  })
+});

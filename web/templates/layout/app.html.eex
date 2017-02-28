@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <title>Milwaukee Digital Public Works</title>
+
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -18,13 +20,12 @@
         <nav role="navigation">
           <ul class="nav navbar-nav">
             <li><a href="/">View Projects</a></li>
-            <li><a href="/">Submit a Project</a></li>
+            <li><a href="/submit">Submit a Project</a></li>
           </ul>
         </nav>
         <nav role="navigation" class="navbar-right">
           <ul class="nav navbar-nav">
-            <li><a href="/">Sign up</a></li>
-            <li><a href="/">Sign in</a></li>
+            <li><a href="/login">Sign in</a></li>
           </ul>
         </nav>
       </div>

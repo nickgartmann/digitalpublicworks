@@ -31,10 +31,22 @@
     .form-group {
       margin-bottom: 1rem;
     }
+    textarea {
+      height: 10rem;
+    }
   }
 
   input, textarea {
     border-radius: 0px;
+    box-shadow: none;
+  }
 
+  textarea[autoresize] {
+    overflow: hidden;
+    resize: none;
   }
 }
+
+
+
+
