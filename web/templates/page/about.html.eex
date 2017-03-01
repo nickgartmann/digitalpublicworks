@@ -1,0 +1,56 @@
+<div class="content-page">
+  <h2 class="title">About Digital Public Works</h2>
+  <p>
+  The Milwaukee Digital Public Works is a community of 
+  Milwaukee residents who want to improve the city by 
+  designing and building technology services. We accept
+  submissions of unsolved problems in the city and 
+  crowdsource solutions to them. Once a solution has been
+  identified, we help collect the resources necessary to 
+  execute the solution and coordinate the team who does
+  the fixing.
+  </p>
+  <p>
+  Project teams are made up of people with diverse expertise
+  and backgrounds to make sure that a true solution is created.
+  This means getting programmers, designers, city employees, and 
+  residents to all work together on the problem.
+  </p>
+
+  <h3 class="title">How it works</h3>
+  <ul>
+    <li>Someone submits a problem to the <a href="/submit">project submission form</a>.</li>
+    <li>The DPW team reviews the problem and is contact with the submittor to learn more about the project.</li>
+    <li>The DPW team approves the project and publishes it on the website.</li>
+    <li>
+      The submittor and DPW team promote the problem to community members and on social media. 
+      During this time, people with an interest or relevant expertise can sign up to help with the project.
+    </li>
+    <li>
+      Once enough subject matter experts have signed on to help, DPW coordinates regular meetings and brainstorm sessions.
+      The goal of these meetings is to come up with a proposed solution to the problem.
+    </li>
+    <li>
+      When a solution is crafted, it is published to the DPW website. 
+      Community members can then provide feedback on the solution and vote in favor of, or against the solution.
+    </li>
+    <li>
+      When a solution is approved by the community, the DPW team works to get the necessary resources to complete 
+      the solution. This may mean fundraising, sourcing volunteers, coordinating with city officials, and many 
+      other activities.
+    </li>
+    <li>
+      As a solution is implemented, updates are posted regularly to the DPW website so community members can follow along.
+    </li>
+    <li>
+      When the solution is complete, the DPW team helps promote the solution for usage by the community.
+    </li>
+  </ul>
+
+  <h3 class="title">Interested in helping?</h3>
+  <p>
+  If you are interested in helping with the Digital Public Works 
+  organizational group, either by providing funding, time, or expertise
+  please <a href="/contact">contact us</a> and let us know how you can help.
+  </p>
+</div>

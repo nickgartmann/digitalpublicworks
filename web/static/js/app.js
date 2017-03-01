@@ -23,8 +23,8 @@ import "phoenix_html"
 
 
 $(function() {
-  $("textarea[autoresize]").on("keyup", function() {
-    console.log($(this).prop("scrollHeight"), $(this).height())
-    $(this).height($(this).prop("scrollHeight") - 12);
+  $("textarea[autoresize]").on("change keyup", function() {
+    $(this).height('auto');
+    $(this).height($(this).prop('scrollHeight') - 12)
   })
 });

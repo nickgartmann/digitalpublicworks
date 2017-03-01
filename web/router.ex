@@ -17,6 +17,14 @@ defmodule DPW.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/about", PageController, :about
+    get "/contact", PageController, :contact
+    get "/privacy", PageController, :privacy
+    get "/terms", PageController, :terms
+    get "/submit", PageController, :submit
+
+    get "/login", PageController, :login
+
     get "/problem/:id", PageController, :problem
   end
 

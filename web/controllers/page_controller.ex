@@ -6,8 +6,31 @@ defmodule DPW.PageController do
   def index(conn, _params) do
     problems = Problem.featured() 
       |> Repo.all()
-
     render conn, "index.html", problems: problems
+  end
+
+  def about(conn, _params) do
+    render conn, "about.html"
+  end
+  
+  def privacy(conn, _params) do
+    render conn, "privacy.html"
+  end
+
+  def contact(conn, _params) do
+    render conn, "contact.html"
+  end
+  
+  def terms(conn, _params) do
+    render conn, "terms.html"
+  end
+
+  def submit(conn, _params) do
+    render conn, "submit.html"
+  end
+
+  def login(conn, _params) do
+    render conn, "login.html"
   end
 
   def problem(conn, %{"id" => problem_id}) do

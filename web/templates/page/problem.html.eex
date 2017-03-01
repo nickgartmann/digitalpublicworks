@@ -27,6 +27,7 @@
     </div>
   </div>
   <div class="pledge section">
+    <a name="help"></a>
     <label for="pledge">Can you help?</label>
     <form>
       <div class="form-group">

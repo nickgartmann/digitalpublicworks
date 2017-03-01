@@ -1,0 +1,21 @@
+<div class="content-page">
+  <h2 class="title">Contact</h2>
+  <form>
+    <div class="form-group">
+      <label>Your name</label>
+      <input type="text" name="name" id="name" class="form-control" required/>
+    </div>
+
+    <div class="form-group">
+      <label>Your email address</label>
+      <input type="email" class="form-control" name="email" id="email" required>
+    </div>
+
+    <div class="form-group">
+      <label>What is on your  mind?</label>
+      <textarea class="form-control" name="message" id="message" autoresize required></textarea>
+    </div>
+
+    <input type="submit" class="btn btn-primary" value="Send">
+  </form>
+</div>
