@@ -78,6 +78,24 @@ defmodule DPW.PageController do
     render(conn, "thank-you.html")
   end
 
+  def contact_thanks(conn, _) do 
+    render(conn, "thank-you-contact.html")
+  end
+  
+  def problem_thanks(conn, _) do
+    render(conn, "thank-you-problem.html")
+  end
+
+  def responses(conn, %{"key" => key}) do
+    responses = from(response in Response, where: response.form_key == ^key, order_by: response.inserted_at)
+                |> Repo.all()
+    render(conn, "responses.html", responses: responses, form_key: key)
+  end
+
+  def response(conn, %{"id" => id}) do 
+    render(conn, "response.html", response: Repo.get!(Response, id))
+  end
+
   defp vote(conn, problem, direction) do
     # TODO: create a fingerprint for the vote if user is not logged in
     

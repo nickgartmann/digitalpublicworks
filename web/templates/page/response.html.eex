@@ -1,0 +1,14 @@
+<div class="content-page">
+  <h1 class="title"><%= String.capitalize(@response.form_key) %> Response</h1>
+  <div style="text-align: center; margin-top: -30px; margin-bottom: 50px;">
+    <code><%= @response.inserted_at %></code>
+  </div>
+  <%= Enum.map @response.answers, fn({key, value}) -> %>
+    <div class="form-group">
+      <label><%= key %></label>
+      <p style="padding-bottom: 24px;">
+        <%= value %>
+      </p>
+    </div>
+  <% end %>
+</div>

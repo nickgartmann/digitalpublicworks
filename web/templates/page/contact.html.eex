@@ -1,19 +1,24 @@
 <div class="content-page">
   <h2 class="title">Contact</h2>
-  <form>
+  <form method="POST" action="/form-submit">
+
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= get_csrf_token() %>">
+    <input type="hidden" name="form_key" value="contact">
+    <input type="hidden" name="_redirect" value="/contact-thank-you">
+
     <div class="form-group">
       <label>Your name</label>
-      <input type="text" name="name" id="name" class="form-control" required/>
+      <input type="text" name="answers[Your name:]" id="name" class="form-control" required/>
     </div>
 
     <div class="form-group">
       <label>Your email address</label>
-      <input type="email" class="form-control" name="email" id="email" required>
+      <input type="email" class="form-control" name="answers[Your email:]" id="email" required>
     </div>
 
     <div class="form-group">
       <label>What is on your  mind?</label>
-      <textarea class="form-control" name="message" id="message" autoresize required></textarea>
+      <textarea class="form-control" name="answers[What is on your mind?]" id="message" autoresize required></textarea>
     </div>
 
     <input type="submit" class="btn btn-primary" value="Send">

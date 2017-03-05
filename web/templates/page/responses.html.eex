@@ -1,0 +1,13 @@
+<div class="content-page">
+  <h1 class="title">Responses</h1>
+
+  <div style="text-align: center; margin-top: -30px;">
+    <code><%= @form_key %></code>
+  </div>
+
+  <ul style="margin-top: 30px;">
+    <%= Enum.map @responses, fn(response) -> %>
+      <li><a href="/response/<%= response.id %>"><%= response.inserted_at %></a></li>
+    <% end %>
+  </ul>
+</div>

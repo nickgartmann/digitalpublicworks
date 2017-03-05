@@ -30,7 +30,11 @@ defmodule DPW.Router do
 
     post "/form-submit", PageController, :respond
     get "/submission-thank-you", PageController, :thanks
+    get "/contact-thank-you", PageController, :contact_thanks
+    get "/problem-thank-you", PageController, :problem_thanks
 
+    get "/responses/:key", PageController, :responses
+    get "/response/:id", PageController, :response
   end
 
 end
