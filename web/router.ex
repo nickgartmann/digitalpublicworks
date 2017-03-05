@@ -28,10 +28,9 @@ defmodule DPW.Router do
     get "/problem/:id", PageController, :problem
     get "/problem/:id/vote/:direction", PageController, :cast_vote
 
+    post "/form-submit", PageController, :respond
+    get "/submission-thank-you", PageController, :thanks
+
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", DPW do
-  #   pipe_through :api
-  # end
 end

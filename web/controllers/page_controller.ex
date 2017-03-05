@@ -1,7 +1,7 @@
 defmodule DPW.PageController do
   use DPW.Web, :controller
 
-  alias DPW.{Repo, Problem, Vote}
+  alias DPW.{Repo, Problem, Vote, Response}
 
   def index(conn, _params) do
     problems = Problem.featured() 
@@ -66,6 +66,16 @@ defmodule DPW.PageController do
             |> redirect(to: "/problem/#{problem.id}")
         end
     end
+  end
+
+  def respond(conn, %{"_redirect" => redir_path, "form_key" => form_key, "answers" => answers}) do
+    response_changeset = Response.changeset(%Response{}, %{"form_key" => form_key,"answers" => answers})
+    Repo.insert!(response_changeset)
+    redirect(conn, to: redir_path)
+  end
+
+  def thanks(conn, _) do
+    render(conn, "thank-you.html")
   end
 
   defp vote(conn, problem, direction) do

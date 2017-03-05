@@ -7,26 +7,29 @@
   week of its submission. If you run into any trouble, <a href="/contact">send us an email.</a>
   </p>
   <br />
-  <form>
+ <form method="POST" action="/form-submit">
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= get_csrf_token() %>">
+    <input type="hidden" name="form_key" value="problem-submission">
+    <input type="hidden" name="_redirect" value="/submission-thank-you">
     <div class="form-group required">
       <label for="name" title="Required">What is your name?</label>
-      <input type="text" name="name" id="name" class="form-control" required>
+      <input type="text" name="answers[What is your name?]" id="name" class="form-control" required>
     </div>
     <div class="form-group required">
-      <label for="email" title="required">What is our email address?</label>
-      <input type="email" name="email" id="email" class="form-control" required>
+      <label for="email" title="required">What is your email address?</label>
+      <input type="email" name="answers[What is your email address?]" id="email" class="form-control" required>
     </div>
     <div class="form-group required">
       <label for="what" title="required">What is the problem you want solved?</label>
-      <textarea name="what" id="what" class="form-control" autoresize ></textarea>
+      <textarea name="answers[What is the problem you want solved?]" id="what" class="form-control" autoresize ></textarea>
     </div>
     <div class="form-group">
       <label for="who">Who is experiencing this problem?</label>
-      <textarea name="who" id="who" class="form-control" autoresize></textarea>
+      <textarea name="answers[Who is experiencing this problem?]" id="who" class="form-control" autoresize></textarea>
     </div>
     <div class="form-group">
       <label for="where">Where is the problem occuring?</label>
-      <textarea name="where" id="where" class="form-control" autoresize></textarea>
+      <textarea name="answers[Where is this problem occuring?]" id="where" class="form-control" autoresize></textarea>
     </div>
     <input type="submit" class="btn btn-primary" value="Submit problem for consideration">
   </form>
