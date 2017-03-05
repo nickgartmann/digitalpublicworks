@@ -26,10 +26,10 @@
         <div class="alert alert-danger">You can only vote once, and you already voted.</div>
       <% end %>
       <a href="/problem/<%= @problem.id %>/vote/yes" class="btn btn-primary">
-        I am in favor of this project (<%= Enum.count(Enum.filter(@problem.votes, fn(v) -> v.direction end)) %>)
+        I am in favor of this project (<%= Enum.count(Enum.filter(@problem.votes, fn(v) -> v.direction end)) %> votes)
       </a>
       <a href="/problem/<%= @problem.id %>/vote/no" class="btn btn-danger">
-        I am opposed to this project (<%= Enum.count(Enum.filter(@problem.votes, fn(v) -> !v.direction end)) %>)
+        I am opposed to this project (<%= Enum.count(Enum.filter(@problem.votes, fn(v) -> !v.direction end)) %> votes)
       </a>
     </div>
   </div>
