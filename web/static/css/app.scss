@@ -124,3 +124,19 @@ body {
   padding: 10px;
   padding-bottom: 8px;
 }
+
+@media (max-width: 400px) {
+  .navbar-default .container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  nav {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .navbar-default .navbar-brand {
+    font-size: 15px;
+  }
+}
