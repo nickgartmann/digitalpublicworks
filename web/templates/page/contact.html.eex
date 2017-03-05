@@ -6,17 +6,17 @@
     <input type="hidden" name="form_key" value="contact">
     <input type="hidden" name="_redirect" value="/contact-thank-you">
 
-    <div class="form-group">
+    <div class="form-group required">
       <label>Your name</label>
       <input type="text" name="answers[Your name:]" id="name" class="form-control" required/>
     </div>
 
-    <div class="form-group">
-      <label>Your email address</label>
+    <div class="form-group required">
+      <label title="Required">Your email address</label>
       <input type="email" class="form-control" name="answers[Your email:]" id="email" required>
     </div>
 
-    <div class="form-group">
+    <div class="form-group required">
       <label>What is on your  mind?</label>
       <textarea class="form-control" name="answers[What is on your mind?]" id="message" autoresize required></textarea>
     </div>

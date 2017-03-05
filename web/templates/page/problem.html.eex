@@ -44,10 +44,10 @@
       <input type="hidden" name="_redirect" value="/problem-thank-you">
 
       <div class="form-group">
-        <input type="text" name="answers[Your name:]" class="form-control" placeholder="Your name">
+        <input type="text" name="answers[Your name:]" class="form-control" placeholder="Your name" required>
       </div>
       <div class="form-group">
-        <input type="email" name="answers[Your email:]" class="form-control" placeholder="Your email address">
+        <input type="email" name="answers[Your email:]" class="form-control" placeholder="Your email address" required>
       </div>
       <div class="form-group">
         <textarea class="form-control" name="answers[How can you help?]" autoresize placeholder="How can you help?"></textarea>
