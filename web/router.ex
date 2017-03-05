@@ -26,6 +26,8 @@ defmodule DPW.Router do
     get "/login", PageController, :login
 
     get "/problem/:id", PageController, :problem
+    get "/problem/:id/vote/:direction", PageController, :cast_vote
+
   end
 
   # Other scopes may use custom stacks.

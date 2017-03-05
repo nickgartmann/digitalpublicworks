@@ -39,4 +39,32 @@ defmodule DPW.PageController do
       problem -> render(conn, "problem.html", problem: problem)
     end
   end
+
+  def cast_vote(conn, %{"id" => problem_id, "direction" => "yes"}) do
+    case Repo.get(Problem, problem_id) do 
+      nil     -> redirect(conn, to: "/")
+      problem -> 
+        conn
+        |> vote(problem, true)
+        |> render("problem.html", problem: problem)
+    end
+  end
+
+  def cast_vote(conn, %{"id" => problem_id, "direction" => "no"}) do
+    case Repo.get(Problem, problem_id) do 
+      nil     -> redirect(conn, to: "/")
+      problem -> 
+        conn
+        |> vote(problem, false)
+        |> render("problem.html", problem: problem)
+    end
+  end
+
+  defp vote(conn, _problem, _direction) do
+    # TODO: create a fingerprint for the vote if user is not logged in
+    # TODO: set a cookie that they have already voted, and which direction they voted
+    # TODO: create a new vote
+    conn
+  end
+
 end

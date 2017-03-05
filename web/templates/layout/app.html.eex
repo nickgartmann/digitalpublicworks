@@ -10,9 +10,11 @@
     <title>Milwaukee Digital Public Works</title>
 
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
   </head>
 
   <body>
+
 
     <header class="header navbar navbar-default navbar-fixed-top">
       <div class="container">
