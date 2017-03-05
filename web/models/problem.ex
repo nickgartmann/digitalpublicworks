@@ -7,6 +7,8 @@ defmodule DPW.Problem do
     field :needs, :string
     field :featured, :boolean, default: false
 
+    has_many :votes, DPW.Vote
+
     timestamps()
   end
 

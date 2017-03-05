@@ -17,4 +17,11 @@ defmodule DPW.Vote do
     |> cast(params, [:direction, :fingerprint])
     |> validate_required([:direction, :fingerprint])
   end
+
+  def create!(problem, direction, fingerprint \\ "FINGERPRINT_PLACEHOLDER") do 
+    changeset = changeset(%__MODULE__{}, %{direction: direction, fingerprint: fingerprint})
+    |> put_assoc(:problem, problem)
+
+    {:ok, changeset}
+  end
 end

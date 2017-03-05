@@ -1,7 +1,7 @@
 defmodule DPW.PageController do
   use DPW.Web, :controller
 
-  alias DPW.{Repo, Problem}
+  alias DPW.{Repo, Problem, Vote}
 
   def index(conn, _params) do
     problems = Problem.featured() 
@@ -34,7 +34,7 @@ defmodule DPW.PageController do
   end
 
   def problem(conn, %{"id" => problem_id}) do
-    case Repo.get(Problem, problem_id) do 
+    case Repo.get(Problem, problem_id) |> Repo.preload(:votes) do 
       nil     -> redirect(conn, to: "/")
       problem -> render(conn, "problem.html", problem: problem)
     end
@@ -44,9 +44,13 @@ defmodule DPW.PageController do
     case Repo.get(Problem, problem_id) do 
       nil     -> redirect(conn, to: "/")
       problem -> 
-        conn
-        |> vote(problem, true)
-        |> render("problem.html", problem: problem)
+        case vote(conn, problem, true) do
+          {:ok, _vote, conn} -> redirect(conn, to: "/problem/#{problem.id}")
+          _ -> 
+            conn
+            |> put_flash(:error, "Already voted")
+            |> redirect(to: "/problem/#{problem.id}")
+        end
     end
   end
 
@@ -54,17 +58,34 @@ defmodule DPW.PageController do
     case Repo.get(Problem, problem_id) do 
       nil     -> redirect(conn, to: "/")
       problem -> 
-        conn
-        |> vote(problem, false)
-        |> render("problem.html", problem: problem)
+        case vote(conn, problem, false) do
+          {:ok, _vote, conn} -> redirect(conn, to: "/problem/#{problem.id}")
+          _ -> 
+            conn
+            |> put_flash(:error, "Already voted")
+            |> redirect(to: "/problem/#{problem.id}")
+        end
     end
   end
 
-  defp vote(conn, _problem, _direction) do
+  defp vote(conn, problem, direction) do
     # TODO: create a fingerprint for the vote if user is not logged in
-    # TODO: set a cookie that they have already voted, and which direction they voted
-    # TODO: create a new vote
-    conn
+    
+    case conn.cookies["problem#{problem.id}"] do
+      nil -> 
+        case Vote.create!(problem, direction, fingerprint(conn)) do
+          {:error, _} -> {:error, "Already voted", conn}
+          {:ok, vote} -> 
+            conn = put_resp_cookie(conn, "problem#{problem.id}", "voted", max_age: 24*60*60*730)
+            {:ok, Repo.insert!(vote), conn}
+        end
+      _ -> {:error, "Already voted", conn}
+    end
+
+  end
+
+  defp fingerprint(conn) do 
+    "THE FINGERPRINT"
   end
 
 end

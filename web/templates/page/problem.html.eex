@@ -22,8 +22,15 @@
     </p>
 
     <div>
-      <a href="/problem/<%= @problem.id %>/vote/yes" class="btn btn-primary">I am in favor of this project</a>
-      <a href="/problem/<%= @problem.id %>/vote/no" class="btn btn-danger">I am opposed to this project</a>
+      <%= if get_flash(@conn, :error) do %>
+        <div class="alert alert-danger">You can only vote once, and you already voted.</div>
+      <% end %>
+      <a href="/problem/<%= @problem.id %>/vote/yes" class="btn btn-primary">
+        I am in favor of this project (<%= Enum.count(Enum.filter(@problem.votes, fn(v) -> v.direction end)) %>)
+      </a>
+      <a href="/problem/<%= @problem.id %>/vote/no" class="btn btn-danger">
+        I am opposed to this project (<%= Enum.count(Enum.filter(@problem.votes, fn(v) -> !v.direction end)) %>)
+      </a>
     </div>
   </div>
   <div class="pledge section">
