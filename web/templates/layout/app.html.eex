@@ -17,6 +17,8 @@
     <!-- Twitter meta tags -->
     <meta property="twitter:card" content="summary">
     <meta property="twitter:site" content="@digipublicworks">
+    <meta property="twitter:title" content="<%= @meta[:twitter_title] || @meta[:facebook_title] || @meta[:title] %>">
+    <meta property="twitter:description" content="<%= @meta[:twitter_description] || @meta[:facebook_description] || @meta[:description] %>">
 
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
