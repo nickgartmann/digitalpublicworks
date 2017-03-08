@@ -10,6 +10,9 @@
     <title><%= @meta[:title] %></title>
 
     <!-- Facebook meta tags -->
+    <%= if @meta[:facebook_title] do %><meta property="og:title" content="<%= @meta[:facebook_title] %>"><% end %>
+    <%= if @meta[:facebook_description] do %><meta property="og:description" content="<%= @meta[:facebook_description] %>"><% end %>
+    <meta property="og:site_name" content="Digital Public Works">
 
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">

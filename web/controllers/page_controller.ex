@@ -39,6 +39,7 @@ defmodule DPW.PageController do
       problem -> 
         conn
         |> meta(:title, "DPW - #{problem.title}")
+        |> meta(:facebook_title, "Problem: #{problem.title}")
         |> meta(:description, problem.description)
         |> render("problem.html", problem: problem)
     end
