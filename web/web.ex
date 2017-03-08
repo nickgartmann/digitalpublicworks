@@ -36,6 +36,13 @@ defmodule DPW.Web do
 
       import DPW.Router.Helpers
       import DPW.Gettext
+
+      # Set a meta key/value pair
+      def meta(conn, key, value) do
+        meta = Dict.put(conn.assigns[:meta], key, value)
+        assign(conn, :meta, meta)
+      end
+       
     end
   end
 

@@ -36,7 +36,11 @@ defmodule DPW.PageController do
   def problem(conn, %{"id" => problem_id}) do
     case Repo.get(Problem, problem_id) |> Repo.preload(:votes) do 
       nil     -> redirect(conn, to: "/")
-      problem -> render(conn, "problem.html", problem: problem)
+      problem -> 
+        conn
+        |> meta(:title, "DPW - #{problem.title}")
+        |> meta(:description, problem.description)
+        |> render("problem.html", problem: problem)
     end
   end
 
