@@ -49,3 +49,6 @@ config :dpw, DPW.AnalyticsRepo,
   database: "dpw_analytics_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :dpw, DPW.Plugs.Analytics, 
+  tracking_cookie: "dpw_user"

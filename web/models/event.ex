@@ -2,6 +2,7 @@ defmodule DPW.Event do
   use DPW.Web, :model
 
   schema "events" do
+    field :identifier, :string
     field :method, :string
     field :path, :string
     field :query, :string
@@ -17,8 +18,8 @@ defmodule DPW.Event do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:method, :path, :query, :user_agent, :ip, :meta])
-    |> validate_required([:method, :path, :ip])
+    |> cast(params, [:identifier, :method, :path, :query, :user_agent, :ip, :meta])
+    |> validate_required([:identifier, :method, :path, :ip])
   end
 
   def track(event) do 
