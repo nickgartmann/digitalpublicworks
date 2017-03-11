@@ -8,6 +8,7 @@ defmodule DPW.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug DPW.Plugs.Meta
+    plug DPW.Plugs.Analytics
   end
 
   pipeline :api do

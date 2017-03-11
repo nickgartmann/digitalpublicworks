@@ -21,6 +21,13 @@ config :dpw, DPW.Repo,
   url: System.get_env("DATABASE_URL"),
   pool_size: 18,
   ssl: true
+
+config :dpw, DPW.AnalyticsRepo,
+  adapter: Ecto.Adapters.Postgres,
+  url: System.get_env("ANALYTICS_DATABASE_URL"),
+  pool_size: 18,
+  ssl: true
+
 # Do not print debug messages in production
 config :logger, level: :info
 

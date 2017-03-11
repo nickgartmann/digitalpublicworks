@@ -41,3 +41,11 @@ config :dpw, DPW.Repo,
   database: "dpw_dev",
   hostname: "localhost",
   pool_size: 10
+
+config :dpw, DPW.AnalyticsRepo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "postgres",
+  password: "postgres",
+  database: "dpw_analytics_dev",
+  hostname: "localhost",
+  pool_size: 10

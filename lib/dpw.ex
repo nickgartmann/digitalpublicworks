@@ -14,6 +14,8 @@ defmodule DPW do
       supervisor(DPW.Endpoint, []),
       # Start your own worker by calling: DPW.Worker.start_link(arg1, arg2, arg3)
       # worker(DPW.Worker, [arg1, arg2, arg3]),
+      supervisor(DPW.AnalyticsRepo, []),
+      worker(DPW.EventPersister, [DPW.AnalyticsRepo])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
