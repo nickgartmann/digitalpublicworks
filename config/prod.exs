@@ -28,6 +28,10 @@ config :dpw, DPW.AnalyticsRepo,
   pool_size: 18,
   ssl: true
 
+
+config :dpw, DPW.Plugs.Analytics,
+  tracking_cookie: "dpw_user"
+
 # Do not print debug messages in production
 config :logger, level: :info
 
