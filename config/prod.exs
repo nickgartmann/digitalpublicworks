@@ -15,7 +15,7 @@ config :dpw, DPW.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: nil, port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/manifest.json",
-  force_ssl: true
+  force_ssl: [hsts: true]
 
 config :dpw, DPW.Repo,
   adapter: Ecto.Adapters.Postgres,
