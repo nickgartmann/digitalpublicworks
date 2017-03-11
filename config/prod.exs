@@ -13,7 +13,7 @@ use Mix.Config
 # which you typically run after static files are built.
 config :dpw, DPW.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: nil, port: 443, scheme: "https"],
+  url: [host: "digitalpublicworks.com", port: 443, scheme: "https"],
   cache_static_manifest: "priv/static/manifest.json",
   force_ssl: [hsts: true]
 
