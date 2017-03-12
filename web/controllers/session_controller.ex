@@ -11,6 +11,12 @@ defmodule DPW.SessionController do
     render conn, "register.html"
   end
 
+  def logout(conn, _params) do
+    conn
+    |> set_encrypted_cookie("dpwsession", nil)
+    |> redirect(to: "/")
+  end
+
   def test_login(conn, %{"email" => email, "password" => password}) do
 
     user = case User.by_email(email) |> Repo.one() do

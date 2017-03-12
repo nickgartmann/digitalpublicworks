@@ -1,0 +1,8 @@
+<div class="content-page settings">
+  <h2 class="title"><%= @current_user.email_address %></h2>
+
+  <div style="text-align: center;">
+    <a class="btn btn-danger" href="/logout">Log out</a>
+  </div>
+
+</div>

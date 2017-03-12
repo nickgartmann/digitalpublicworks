@@ -30,6 +30,9 @@ defmodule DPW.Router do
     post "/login", SessionController, :test_login
     get "/register", SessionController, :register
     post "/register", SessionController, :create_user
+    get "/logout", SessionController, :logout
+
+    get "/settings", PageController, :settings
 
     get "/problem/:id", PageController, :problem
     get "/problem/:id/vote/:direction", PageController, :cast_vote

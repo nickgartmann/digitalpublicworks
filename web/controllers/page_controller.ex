@@ -29,6 +29,10 @@ defmodule DPW.PageController do
     render conn, "submit.html"
   end
 
+  def settings(conn, _params) do
+    render conn, "settings.html"
+  end
+
   
   def problem(conn, %{"id" => problem_id}) do
     case Repo.get(Problem, problem_id) |> Repo.preload(:votes) do 
