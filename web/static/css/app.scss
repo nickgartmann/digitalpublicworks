@@ -171,3 +171,9 @@ form {
     }
   }
 }
+
+input[type=checkbox] {
+  margin-right: 4px;
+  position: relative;
+  top: -1px;
+}

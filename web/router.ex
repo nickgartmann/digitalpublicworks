@@ -44,6 +44,10 @@ defmodule DPW.Router do
 
     get "/responses/:key", PageController, :responses
     get "/response/:id", PageController, :response
+
+    # Admin Routes
+    get "/admin/new-project", AdminController, :new_project
+    post "/admin/new-project", AdminController, :create_project
   end
 
 end

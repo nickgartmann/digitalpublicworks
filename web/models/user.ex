@@ -37,6 +37,10 @@ defmodule DPW.User do
     |> limit(1)
   end
 
+  def is_admin?(%DPW.User{roles: roles}) do
+    Enum.any?(roles, fn(role) -> role == "admin" end)
+  end
+
   def crypt(pass) do
     Comeonin.Bcrypt.hashpwsalt(pass)
   end

@@ -1,0 +1,24 @@
+<div class="content-page new-project">
+  <h2 class="title">New project</h2>
+  <form method="POST" action="/admin/new-project">
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= get_csrf_token() %>">
+    <div class="form-group required">
+      <label for="title">Title</label>
+      <input type="text" id="title" name="project[title]" class="form-control">
+    </div>
+    <div class="form-group required">
+      <label for="description">Description (markdown)</label>
+      <textarea autoresize class="form-control" name="project[description]" id="description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="needs">Needs</label>
+      <input type="text" id="needs" name="project[needs]" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="featured">
+        <input type="checkbox" id="featured" name="project[featured]"> is featured?
+      </label>
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary">
+  </form>
+</div>
