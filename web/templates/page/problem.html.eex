@@ -25,12 +25,30 @@
       <%= if get_flash(@conn, :error) do %>
         <div class="alert alert-danger">You can only vote once, and you already voted.</div>
       <% end %>
-      <a href="/problem/<%= @problem.id %>/vote/yes" class="btn btn-primary">
-        I am in favor of this project (<%= Enum.count(Enum.filter(@problem.votes, fn(v) -> v.direction end)) %> votes)
-      </a>
-      <a href="/problem/<%= @problem.id %>/vote/no" class="btn btn-danger">
-        I am opposed to this project (<%= Enum.count(Enum.filter(@problem.votes, fn(v) -> !v.direction end)) %> votes)
-      </a>
+      <%= if my_vote(@conn, @problem) == nil do %>
+        <a href="/problem/<%= @problem.id %>/vote/yes" class="btn btn-primary">
+          I am in favor of this project (<%= count_votes(@problem, true) %> votes)
+        </a>
+        <a href="/problem/<%= @problem.id %>/vote/no" class="btn btn-danger">
+          I am opposed to this project (<%= count_votes(@problem, false) %>)
+        </a>
+      <% else %>  
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" style="width: <%= count_votes(@problem, true) / Enum.count(@problem.votes) * 100 %>%">
+            <span><%= count_votes(@problem, true) %> yes</span>
+          </div>
+          <div class="progress-bar progress-bar-danger" role="progressbar" style="width: <%= count_votes(@problem, false) / Enum.count(@problem.votes) * 100 %>%">
+            <span><%= count_votes(@problem, false) %> no</span>
+          </div>
+        </div>
+        <div style="text-align: center">
+          <%= if my_vote(@conn, @problem).direction == true do %>
+            <a class="btn btn-danger btn-sm btn-clear" href="/problem/<%= @problem.id %>/vote/no">Change your vote to no</a>
+          <% else %>
+            <a class="btn btn-primary btn-sm btn-clear" href="/problem/<%= @problem.id %>/vote/yes">Change your vote to yes</a>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
   <div class="pledge section">

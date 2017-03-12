@@ -5,6 +5,7 @@ defmodule DPW.Vote do
     field :direction, :boolean, default: false
     field :fingerprint, :string
     belongs_to :problem, DPW.Problem
+    belongs_to :user, DPW.User
 
     timestamps()
   end
@@ -14,14 +15,17 @@ defmodule DPW.Vote do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:direction, :fingerprint])
-    |> validate_required([:direction, :fingerprint])
+    |> cast(params, [:direction])
+    |> validate_required([:direction])
   end
 
-  def create!(problem, direction, fingerprint \\ "FINGERPRINT_PLACEHOLDER") do 
-    changeset = changeset(%__MODULE__{}, %{direction: direction, fingerprint: fingerprint})
+  def create!(problem, user, direction) do 
+    changeset = changeset(%__MODULE__{}, %{direction: direction})
     |> put_assoc(:problem, problem)
-
-    {:ok, changeset}
+    |> put_assoc(:user, user)
+  end
+  
+  def update!(vote, direction) do
+    changeset(vote, %{direction: direction})
   end
 end

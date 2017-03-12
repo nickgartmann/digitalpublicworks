@@ -1,5 +1,8 @@
 <div class="content-page" style="max-width: 400px;">
   <h2 class="title">Register</h2>
+  <%= if get_flash(@conn, :error) do %>
+    <div class="alert alert-danger"><%= get_flash(@conn, :error) %></div>
+  <% end %>
   <form method="POST" action="/register">
     <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= get_csrf_token() %>">
     <% IO.inspect @conn.assigns %>

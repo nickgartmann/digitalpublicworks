@@ -177,3 +177,44 @@ input[type=checkbox] {
   position: relative;
   top: -1px;
 }
+
+.progress {
+  height: 30px;
+  margin-bottom: 8px;
+  .progress-bar {
+    text-align: left;
+    span {
+      display: block;
+      padding: 6px 12px;
+    }
+    &:last-child {
+      text-align: right;
+    }
+    &.progress-bar-primary {
+      background-color: #00A7E0;
+      border-color: darken(#00A7E0, 10%);
+    }
+  }
+}
+
+
+.btn.btn-clear {
+  background: transparent!important;
+  border-width: 0px;
+  color: #222;
+
+  &.btn-danger {
+    color: #d9534f;
+    &:hover { color: darken(#d9534f, 10%); }
+  }
+  &.btn-primary {
+    color: #00A7E0;
+    &:hover { color: darken(#00A7E0, 10%); }
+  }
+
+  &:hover,
+  &:active {
+    background-color: transparent!important;
+    box-shadow: none;
+  }
+}
