@@ -38,6 +38,7 @@ defmodule DPW.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:comeonin, "~> 3.0"},
+     {:earmark, "~> 1.2.0"},
      {:cowboy, "~> 1.0"}]
   end
 

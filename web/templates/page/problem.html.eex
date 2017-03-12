@@ -5,7 +5,7 @@
   </div>
   <div class="description section">
     <label for="description">Details</label>
-    <p><%= @problem.description %></p>
+    <p><%= raw Earmark.as_html!(@problem.description) %></p>
   </div>
   <div class="needs section">
     <label for="needs">Needs</label>
