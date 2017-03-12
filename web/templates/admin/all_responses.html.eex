@@ -1,0 +1,8 @@
+<div class="content-page all-responses">
+  <h2 class="title">Response categories</h2>
+  <ul>
+    <%= Enum.map @keys, fn(key) -> %>
+      <li><a href="/admin/responses/<%= key %>"><%= key %></a></li>
+    <% end %>
+  </ul>
+</div>

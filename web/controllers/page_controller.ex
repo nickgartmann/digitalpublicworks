@@ -92,17 +92,7 @@ defmodule DPW.PageController do
     render(conn, "thank-you-problem.html")
   end
 
-  def responses(conn, %{"key" => key}) do
-    responses = from(response in Response, where: response.form_key == ^key, order_by: response.inserted_at)
-                |> Repo.all()
-    render(conn, "responses.html", responses: responses, form_key: key)
-  end
-
-  def response(conn, %{"id" => id}) do 
-    render(conn, "response.html", response: Repo.get!(Response, id))
-  end
-
-  defp vote(conn, _, nil, _), do: conn |> put_flash(:error, "You must have an account to vote.") |> redirect(to: "/register")
+    defp vote(conn, _, nil, _), do: conn |> put_flash(:error, "You must have an account to vote.") |> redirect(to: "/register")
   defp vote(conn, problem, user, direction) do
 
     vote = from(v in Vote, where: v.problem_id == ^problem.id and v.user_id == ^user.id) |> Repo.one()
