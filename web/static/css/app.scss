@@ -140,3 +140,34 @@ body {
     font-size: 15px;
   }
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+
+  .column {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+}
+
+
+form {
+  .error {
+    color: #d9534f;
+    font-size: 1.3rem;
+    padding-left: 2px;
+    margin-top: 2px;
+    display: block;
+
+    &:before {
+      content: "\21B3";
+      display: inline-block;
+      margin-right: 3px;
+      font-size: 1.5rem;
+      position: relative;
+      top: 1px;
+    }
+  }
+}

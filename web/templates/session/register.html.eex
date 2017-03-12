@@ -1,0 +1,26 @@
+<div class="content-page" style="max-width: 400px;">
+  <h2 class="title">Register</h2>
+  <form method="POST" action="/register">
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= get_csrf_token() %>">
+    <% IO.inspect @conn.assigns %>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" name="email" id="email" required class="form-control" <%= if @conn.assigns[:email] do %>value="<%= @conn.assigns[:email] %>"<% end %>>
+      <%= if get_flash(@conn, :email) do %><span class="error"><%= get_flash(@conn, :email) %></span><% end %>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required class="form-control">
+      <%= if get_flash(@conn, :password) do %><span class="error"><%= get_flash(@conn, :password) %></span><% end %>
+    </div>
+    <div class="form-group">
+      <label for="password-confirm">Re-type password</label>
+      <input type="password" name="password-confirm" id="password-confirm" required class="form-control">
+      <%= if get_flash(@conn, :password_confirm) do %><span class="error"><%= get_flash(@conn, :password_confirm) %></span><% end %>
+    </div>
+    <div style="float: right; font-size: 1.3rem; line-height: 180%;">
+      <div><a href="/login">Sign in instead</a></div>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Register">
+  </form>
+</div>

@@ -29,10 +29,7 @@ defmodule DPW.PageController do
     render conn, "submit.html"
   end
 
-  def login(conn, _params) do
-    render conn, "login.html"
-  end
-
+  
   def problem(conn, %{"id" => problem_id}) do
     case Repo.get(Problem, problem_id) |> Repo.preload(:votes) do 
       nil     -> redirect(conn, to: "/")
@@ -117,7 +114,7 @@ defmodule DPW.PageController do
 
   end
 
-  defp fingerprint(conn) do 
+  defp fingerprint(_) do 
     "THE FINGERPRINT"
   end
 

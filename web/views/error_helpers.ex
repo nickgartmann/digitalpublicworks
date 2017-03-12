@@ -37,4 +37,11 @@ defmodule DPW.ErrorHelpers do
       Gettext.dgettext(DPW.Gettext, "errors", msg, opts)
     end
   end
+
+  def error_message(conn, key, cb) do 
+    case Plug.Conn.get_flash(conn, :error) do
+      {^key, msg} -> cb.(msg)
+      _ -> ""
+    end
+  end
 end

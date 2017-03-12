@@ -8,6 +8,7 @@ defmodule DPW.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug DPW.Plugs.Meta
+    plug DPW.Plugs.Auth
     plug DPW.Plugs.Analytics
   end
 
@@ -25,7 +26,10 @@ defmodule DPW.Router do
     get "/terms", PageController, :terms
     get "/submit", PageController, :submit
 
-    get "/login", PageController, :login
+    get "/login", SessionController, :login
+    post "/login", SessionController, :test_login
+    get "/register", SessionController, :register
+    post "/register", SessionController, :create_user
 
     get "/problem/:id", PageController, :problem
     get "/problem/:id/vote/:direction", PageController, :cast_vote

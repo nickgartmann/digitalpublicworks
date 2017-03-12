@@ -48,7 +48,11 @@
           </nav>
           <nav role="navigation" class="navbar-right">
             <ul class="nav navbar-nav">
-              <li><a href="/login">Sign in</a></li>
+              <%= if @current_user do %>
+                <li><a href="/settings"><%= @current_user.email_address %></a></li>
+              <% else %>
+                <li><a href="/login">Sign in</a></li>
+              <% end %>
             </ul>
           </nav>
         </div>

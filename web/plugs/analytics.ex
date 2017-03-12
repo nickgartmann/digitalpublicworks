@@ -18,7 +18,7 @@ defmodule DPW.Plugs.Analytics do
   end
 
   defp header(conn, header_key) do 
-    [{_, val} | _] = Enum.filter(conn.req_headers, fn({key, val}) -> 
+    [{_, val} | _] = Enum.filter(conn.req_headers, fn({key, _}) -> 
       key == header_key 
     end) 
     val

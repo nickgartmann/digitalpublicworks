@@ -1,6 +1,10 @@
 <div class="content-page" style="max-width: 400px;">
   <h2 class="title">Sign in</h2>
-  <form>
+  <form method="POST" action="/login">
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= get_csrf_token() %>">
+    <%= if get_flash(@conn, :error) do %>
+      <div class="alert alert-danger"><%= get_flash(@conn, :error) %></div>
+    <% end %>
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" name="email" id="email" required class="form-control">
@@ -8,6 +12,10 @@
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" name="password" id="password" required class="form-control">
+    </div>
+    <div style="float: right; font-size: 1.3rem; line-height: 180%;">
+      <div><a href="/forgot-password">Forgot your password?</a></div>
+      <div><a href="/register">Register an account</a></div>
     </div>
     <input class="btn btn-primary" type="submit" value="Sign in">
   </form>
