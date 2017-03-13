@@ -1,5 +1,8 @@
 <div class="content-page">
   <h2 class="title">About Digital Public Works</h2>
+  <div class="alert alert-info">
+    <strong>Please note:</strong> This site is not affiliated with the Milwaukee city or county governments</strong>.
+  </div>
   <p>
   The Milwaukee Digital Public Works is a community of 
   Milwaukee residents who want to improve the city by 
@@ -10,6 +13,7 @@
   execute the solution and coordinate the team who does
   the fixing.
   </p>
+  
   <p>
   Project teams are made up of people with diverse expertise
   and backgrounds to make sure that a true solution is created.
