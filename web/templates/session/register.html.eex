@@ -5,7 +5,6 @@
   <% end %>
   <form method="POST" action="/register">
     <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= get_csrf_token() %>">
-    <% IO.inspect @conn.assigns %>
     <div class="form-group">
       <label for="email">Email address</label>
       <input type="email" name="email" id="email" required class="form-control" <%= if @conn.assigns[:email] do %>value="<%= @conn.assigns[:email] %>"<% end %>>
