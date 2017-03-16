@@ -26,7 +26,7 @@
       <%= problem.title %>
     </div>
     <p class="description">
-      <%= problem.description %>
+      <%= raw Earmark.as_html!(problem.description) %>
     </p>
     <a class="btn btn-primary" href="/problem/<%= problem.id %>#help">I can help</a>
     <a class="btn btn-default" href="/problem/<%= problem.id %>">Learn more</a>
