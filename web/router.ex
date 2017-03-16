@@ -42,11 +42,13 @@ defmodule DPW.Router do
     get "/contact-thank-you", PageController, :contact_thanks
     get "/problem-thank-you", PageController, :problem_thanks
 
+    # Admin Routes
+    get "/admin", AdminController, :index
+
     get "/admin/responses", AdminController, :response_types
     get "/admin/responses/:key", AdminController, :responses
     get "/admin/response/:id", AdminController, :response
 
-    # Admin Routes
     get "/admin/new-project", AdminController, :new_project
     post "/admin/new-project", AdminController, :create_project
   end

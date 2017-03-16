@@ -1,0 +1,27 @@
+<div class="content-page admin-dashboard">
+  <h2 class="title">Admin</h2>
+  <div class="btn-group"> 
+    <a href="/admin/responses" class="btn btn-default">View all response types</a>
+    <a href="/admin/new-project" class="btn btn-default">New submission</a>
+  </div>
+  <br /><br />
+  <h4>Recent responses</h4>
+  <div class="recent-responses">
+    <%= Enum.map @responses, fn(response) -> %>
+      <div class="response panel panel-default">
+        <div class="panel-heading">
+          <div style="float: right"><%= Timex.format!(response.inserted_at, "{Mshort} {D} at {h12}:{m}{am}") %></div>
+          <div class="panel-title">
+            <a href="/admin/responses/<%= response.form_key %>"><%= response.form_key %></a></div>
+        </div>
+        <div class="panel-body">
+          <%= Enum.map response.answers, fn({question, answer}) -> %>
+            <div>
+            <strong><%= question %></strong>&nbsp;&nbsp; <%= answer %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

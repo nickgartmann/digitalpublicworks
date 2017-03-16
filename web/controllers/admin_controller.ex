@@ -5,6 +5,11 @@ defmodule DPW.AdminController do
 
   alias DPW.{Response, Repo}
 
+  def index(conn, _params) do
+    responses = from(response in Response, order_by: [desc: response.inserted_at], limit: 5) |> Repo.all()
+    render conn, "index.html", responses: responses
+  end
+
   def new_project(conn, _params) do
     render conn, "new-project.html"
   end
