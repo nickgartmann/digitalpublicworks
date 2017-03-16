@@ -38,6 +38,12 @@
       margin-top: 1rem;
       margin-bottom: 2rem;
       font-size: 1.2rem;
+
+      p { 
+        display: none;
+        &:first-of-type {
+          display: block;
+        }
     }
   }
 }
